@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ANZAR STEP | Future Footwear</title>
+  <meta name="description" content="Chaussures en cuir véritable fabriquées à la main au Maroc. Paiement à la livraison, livraison 24-72h partout au Maroc." />
+  <meta name="theme-color" content="#05060d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 30 30H2Z' fill='none' stroke='%2300f0ff' stroke-width='3'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- BOOT SCREEN -->
+  <div id="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <div class="boot-logo" data-brand>ANZAR STEP</div>
+      <div class="boot-lines mono" id="bootLines"></div>
+      <div class="boot-bar"><span id="bootBar"></span></div>
+    </div>
+  </div>
+
+  <canvas id="bg"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M16 3 29 29H3Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 13 22 25H10Z" fill="currentColor" opacity=".55"/></svg>
+      <span data-brand>ANZAR STEP</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#collection">Collection</a>
+      <a href="#tech">Technologie</a>
+      <a href="#how">Commande</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <span class="status mono"><i></i>ONLINE</span>
+      <button class="cart-btn" id="cartBtn" aria-label="Panier">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.3" fill="currentColor"/><circle cx="17" cy="20.5" r="1.3" fill="currentColor"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid-floor" aria-hidden="true"></div>
+      <div class="hero-text">
+        <div class="kicker mono reveal"><span class="dot"></span> COLLECTION 2026 // HANDMADE IN MOROCCO</div>
+        <h1 class="glitch reveal" data-text="STEP INTO THE FUTURE">STEP INTO<br/><span class="grad">THE FUTURE</span></h1>
+        <p class="lead reveal">Cuir véritable, fabriqué à la main au Maroc. Design classique, énergie futuriste. Paiement à la livraison partout f l'Maghrib.</p>
+        <div class="hero-cta reveal">
+          <a href="#collection" class="btn btn-primary"><span>Explorer la collection</span></a>
+          <a href="#how" class="btn btn-ghost"><span>Comment commander</span></a>
+        </div>
+        <div class="hero-stats reveal">
+          <div><b class="counter" data-to="299">0</b><small>DH à partir de</small></div>
+          <div><b>24-72H</b><small>Livraison</small></div>
+          <div><b>COD</b><small>Paiement à la livraison</small></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="holo">
+          <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+          <div class="holo-beam"></div>
+          <div class="holo-img-wrap" id="heroImgWrap">
+            <img id="heroImg" alt="" />
+          </div>
+          <div class="hud hud-tl mono">MODEL<br/><b id="heroName">ZEBRA</b></div>
+          <div class="hud hud-tr mono">PRICE<br/><b id="heroPrice">299 DH</b></div>
+          <div class="hud hud-bl mono">SIZE RANGE<br/><b>EU 36-46</b></div>
+          <div class="hud hud-br mono">STATUS<br/><b class="ok">IN STOCK</b></div>
+          <div class="hero-dots" id="heroDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track mono" id="ticker"></div>
+    </div>
+
+    <!-- COLLECTION -->
+    <section class="section" id="collection">
+      <div class="section-head">
+        <div class="kicker mono reveal">// 01 — CATALOGUE</div>
+        <h2 class="reveal">La <span class="grad">Collection</span></h2>
+        <p class="reveal">Choisi l'model, l'pointure, o commandi f 30 secondes.</p>
+      </div>
+      <div class="filters reveal" id="filters" role="tablist"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- TECH / FEATURES -->
+    <section class="section" id="tech">
+      <div class="section-head">
+        <div class="kicker mono reveal">// 02 — SPECIFICATIONS</div>
+        <h2 class="reveal">Engineered <span class="grad">by hand</span></h2>
+      </div>
+      <div class="features">
+        <article class="feature reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7z" /><path d="M12 22V12M3 7l9 5 9-5"/></svg></div>
+          <h3>Cuir véritable</h3><p>Matières premium sélectionnées, pensées bach y-vieilliw b style.</p>
+          <span class="f-code mono">MAT-01</span>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+          <h3>Fait main au Maroc</h3><p>Chaque paire mkhdouma b l'yed, m3a attention l kol détail.</p>
+          <span class="f-code mono">CRF-02</span>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M1 7h13v10H1zM14 10h4l3 3v4h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg></div>
+          <h3>Livraison 24-72h</h3><p>Kanwslo l ga3 les villes dyal l'Maghrib, rapide o sécurisé.</p>
+          <span class="f-code mono">LOG-03</span>
+        </article>
+        <article class="feature reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+          <h3>Paiement à la livraison</h3><p>Ma tkhelles 7ta tchouf sabbat dyalk f yeddik. Zero risque.</p>
+          <span class="f-code mono">PAY-04</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW TO ORDER -->
+    <section class="section" id="how">
+      <div class="section-head">
+        <div class="kicker mono reveal">// 03 — PROTOCOLE</div>
+        <h2 class="reveal">Commander en <span class="grad">3 étapes</span></h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal"><span class="step-n mono">01</span><h3>Choisis</h3><p>Khtar l'model o l'pointure (EU 36 à 46).</p></li>
+        <li class="step reveal"><span class="step-n mono">02</span><h3>Confirme</h3><p>3mmer smiytek, tilifoun, l'mdina o l'adresse.</p></li>
+        <li class="step reveal"><span class="step-n mono">03</span><h3>Reçois</h3><p>Commande katsift f WhatsApp, o katkhelles mlli twselk.</p></li>
+      </ol>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="section">
+      <div class="cta-panel reveal">
+        <div>
+          <div class="kicker mono">// SUPPORT CHANNEL OPEN</div>
+          <h2>Soual 3la l'pointure ?<br/><span class="grad">Hder m3ana direct.</span></h2>
+        </div>
+        <a class="btn btn-primary" id="ctaWa" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-big" data-brand>ANZAR STEP</div>
+    <div class="footer-cols">
+      <div><h4 class="mono">// BRAND</h4><p id="footTag"></p></div>
+      <div><h4 class="mono">// CONTACT</h4>
+        <p><a id="footWa" target="_blank" rel="noopener"></a></p>
+        <p><a id="footMail"></a></p>
+        <p>Réponse en moins de 24h</p>
+      </div>
+      <div><h4 class="mono">// SOCIAL</h4>
+        <p><a id="footIg" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a id="footTt" target="_blank" rel="noopener">TikTok</a></p>
+        <p><a id="footFb" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+      <div><h4 class="mono">// INFO</h4><p>Livraison partout au Maroc</p><p>Paiement à la livraison</p><p>Pointures EU 36-46</p></div>
+    </div>
+    <div class="footer-bottom mono"><span>© <span id="year"></span> <span data-brand>ANZAR STEP</span></span><span>SYS.VER 2.6 // ALL SYSTEMS NOMINAL</span></div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div class="overlay" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mName">
+      <button class="close" data-close aria-label="Fermer">✕</button>
+      <div class="m-gallery">
+        <div class="m-main frame"><img id="mImg" alt="" /><span class="m-scan"></span></div>
+        <div class="m-thumbs" id="mThumbs"></div>
+      </div>
+      <div class="m-info">
+        <div class="kicker mono" id="mCode"></div>
+        <h2 id="mName"></h2>
+        <div class="price-row"><span class="price" id="mPrice"></span><s id="mOld"></s><span class="badge" id="mOff"></span></div>
+        <p id="mDesc"></p>
+        <ul class="specs mono" id="mSpecs"></ul>
+        <div class="label mono">SÉLECTIONNE TA POINTURE (EU)</div>
+        <div class="sizes" id="mSizes"></div>
+        <div class="stock mono" id="mStock"></div>
+        <div class="m-actions">
+          <div class="qty"><button id="qMinus" aria-label="Moins">−</button><span id="qVal">1</span><button id="qPlus" aria-label="Plus">+</button></div>
+          <button class="btn btn-primary" id="mAdd"><span>Ajouter au panier</span></button>
+        </div>
+        <button class="btn btn-ghost full" id="mBuy"><span>Commander maintenant</span></button>
+        <div class="m-error mono" id="mErr"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Panier">
+    <div class="drawer-head">
+      <h3><span class="mono">// </span>Panier</h3>
+      <button class="close" id="drawerClose" aria-label="Fermer">✕</button>
+    </div>
+    <div class="drawer-body" id="cartView">
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <div><span>Sous-total</span><b id="cartSub">0 DH</b></div>
+        <div><span>Livraison</span><b id="cartShip">Gratuite</b></div>
+        <div class="grand"><span>Total</span><b id="cartTotal">0 DH</b></div>
+      </div>
+      <button class="btn btn-primary full" id="toCheckout"><span>Passer la commande</span></button>
+    </div>
+    <form class="drawer-body hidden" id="checkout" novalidate>
+      <button type="button" class="back mono" id="backToCart">← RETOUR AU PANIER</button>
+      <div class="kicker mono">// PAIEMENT À LA LIVRAISON</div>
+      <label>Nom complet<input name="name" autocomplete="name" required placeholder="Ex: Youssef El Amrani" /></label>
+      <label>Téléphone<input name="phone" type="tel" autocomplete="tel" required placeholder="06 XX XX XX XX" /></label>
+      <label>Ville<input name="city" list="cities" required placeholder="Casablanca" /></label>
+      <datalist id="cities"><option>Casablanca</option><option>Rabat</option><option>Marrakech</option><option>Fès</option><option>Tanger</option><option>Agadir</option><option>Meknès</option><option>Oujda</option><option>Kénitra</option><option>Tétouan</option><option>Salé</option><option>Nador</option><option>El Jadida</option><option>Béni Mellal</option><option>Safi</option><option>Mohammedia</option><option>Laâyoune</option><option>Khouribga</option></datalist>
+      <label>Adresse<textarea name="address" rows="2" required placeholder="Quartier, rue, numéro"></textarea></label>
+      <div class="cart-total small">
+        <div class="grand"><span>Total à payer</span><b id="coTotal">0 DH</b></div>
+      </div>
+      <div class="m-error mono" id="coErr"></div>
+      <button class="btn btn-primary full" type="submit"><span>Confirmer via WhatsApp</span></button>
+      <p class="note">Commande katsift l WhatsApp dyalna. Ghadi n3ayto lik bach nconfirmiw.</p>
+    </form>
+  </aside>
+
+  <a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/></svg>
+  </a>
+
+  <div class="toast mono" id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
