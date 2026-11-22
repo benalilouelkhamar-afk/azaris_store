@@ -5,7 +5,7 @@ import { Header, ProductCard, ProductModal, CartDrawer, Toast, Img } from "../co
 const FILTERS = [{ id: "all", label: "Tout" }, { id: "shoes", label: "Souliers" }, { id: "sandals", label: "Sabots" }];
 
 export default function Home() {
-  const { visible, byId, settings, wa } = useStore();
+  const { visible, byId, settings, wa, loading, loadError } = useStore();
   const [filter, setFilter] = useState("all");
   const [modal, setModal] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
@@ -63,6 +63,7 @@ export default function Home() {
                 {FILTERS.map((f) => <button key={f.id} className={f.id === filter ? "on" : ""} onClick={() => setFilter(f.id)}>{f.label}</button>)}
               </div>
             </div>
+            {(loading || loadError) && <p style={{ opacity: .7, padding: "20px 0" }}>{loadError || "Chargement des modèles..."}</p>}
             <div className="grid">{list.map((p) => <ProductCard key={p.id} p={p} onOpen={setModal} />)}</div>
           </div>
         </section>

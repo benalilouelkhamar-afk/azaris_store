@@ -15,21 +15,33 @@ Déploiement : Vercel, Netlify ou tout hébergeur statique (dossier `dist`).
 - Panier enregistré dans le navigateur
 - Formulaire de commande (nom, téléphone, ville, adresse) : la commande est enregistrée puis le message est ouvert dans WhatsApp, prêt à envoyer
 
-## Administration
-Adresse : `/#/admin` (mot de passe par défaut : `azaris2026`, à changer dans Paramètres).
-- Tableau de bord : chiffre d'affaires, commandes, panier moyen, ventes des 7 derniers jours, meilleures ventes, stock faible
-- Commandes : recherche, filtres par statut, changement de statut, détail, note interne, contact WhatsApp du client, ajout manuel, export Excel (CSV)
-- Produits : ajout, modification, suppression, photos (upload ou lien), stock, prix barré, masquer un produit
-- Paramètres : nom, numéro WhatsApp, frais de livraison, bandeau, réseaux sociaux, mot de passe
+## Base de données (Supabase)
+Avec Supabase, toutes les commandes des clients arrivent dans l'admin, en direct, sur tous vos appareils. Les produits et les paramètres modifiés dans l'admin sont publiés pour tout le monde.
 
-## Important
-Le site n'a pas de serveur : les commandes et les modifications de l'administration sont enregistrées dans le navigateur.
-- Les commandes passées par les clients arrivent sur WhatsApp ; dans l'admin elles ne s'affichent que sur l'appareil où elles ont été passées (utiliser « Ajouter une commande » pour les saisir).
-- Les modifications de produits faites dans l'admin ne sont visibles que sur cet appareil. Pour les publier pour tous, exporter `produits.json` et mettre à jour `src/data/defaults.js`.
-Pour un admin partagé (commandes de tous les clients en temps réel), il faut brancher une base de données (Supabase ou Firebase).
+1. Supabase > **SQL Editor** : coller et lancer `supabase/schema.sql`, puis `supabase/seed.sql` (les 7 produits).
+2. Supabase > **Authentication > Users** > *Add user* : créer votre compte admin (e-mail + mot de passe, cocher *Auto confirm*).
+3. SQL Editor : donner l'accès admin à ce compte :
+   ```sql
+   insert into public.admins (user_id) select id from auth.users where email = 'votre@email.com';
+   ```
+4. Authentication > Sign In / Providers : désactiver *Allow new users to sign up*.
+5. Copier `.env.example` en `.env` et coller la clé publique (Project Settings > API > `anon` `public`). Sur Vercel/Netlify, ajouter les mêmes variables `VITE_SUPABASE_URL` et `VITE_SUPABASE_ANON_KEY`.
+
+Sécurité : la clé `anon` est publique (c'est normal). Les clients ne peuvent que lire les produits et passer commande ; les prix et le total sont recalculés par la base (fonction `place_order`), le stock est décrémenté automatiquement. Seuls les comptes de la table `admins` voient les commandes. Ne jamais mettre la clé `service_role` dans le site.
+
+Sans ces variables, le site fonctionne en mode local (données dans le navigateur, mot de passe admin `azaris2026`).
+
+## Administration
+Adresse : `/#/admin` (avec Supabase : e-mail + mot de passe du compte admin).
+- Tableau de bord : chiffre d'affaires, commandes, panier moyen, ventes des 7 derniers jours, meilleures ventes, stock faible
+- Commandes (en direct) : recherche, filtres par statut, changement de statut, détail, note interne, contact WhatsApp du client, ajout manuel, export Excel (CSV)
+- Produits : ajout, modification, suppression, photos (envoyées dans Supabase Storage, ou lien), stock, prix barré, masquer un produit
+- Paramètres : nom, numéro WhatsApp, frais de livraison, bandeau, réseaux sociaux
 
 ## Fichiers
 - `src/data/defaults.js` : paramètres et catalogue par défaut
 - `src/pages/Home.jsx` : boutique
 - `src/pages/Admin.jsx` : administration
 - `src/store.jsx` : panier, commandes, produits, paramètres
+- `src/supabase.js` : connexion Supabase
+- `supabase/schema.sql`, `supabase/seed.sql` : base de données
