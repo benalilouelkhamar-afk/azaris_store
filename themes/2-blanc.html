@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AZARIS · Thème Blanc</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--tx:#0a0a0a;--mut:#7c7c7c;--line:#e7e7e7;--soft:#f5f5f3}
+*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:var(--tx);font:400 14px/1.6 "Inter Tight",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+.up{text-transform:uppercase;letter-spacing:.06em;font-size:12px;font-weight:500}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
+header nav{display:flex;gap:28px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.02em}
+.hero{padding:40px 32px 0}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:36px}
+h1{font-size:150px;line-height:.82;font-weight:800;letter-spacing:-.06em}
+.hero-top p{max-width:340px;color:var(--mut);font-size:15px}
+.hero-top p b{display:block;color:var(--tx);font-weight:600;margin-bottom:8px}
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;height:620px}
+.strip .c{position:relative;background:var(--soft);overflow:hidden}
+.strip .lbl{position:absolute;left:18px;bottom:16px;right:18px;display:flex;justify-content:space-between;font-size:13px;font-weight:600;background:rgba(255,255,255,.92);padding:12px 14px}
+.bar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);margin-top:56px;border-top:1px solid var(--line)}
+.bar div{padding:22px 32px;border-right:1px solid var(--line)}.bar div:last-child{border:0}
+.bar b{display:block;font-size:15px;font-weight:600}.bar span{color:var(--mut)}
+.sec{padding:80px 32px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.sh h2{font-size:44px;font-weight:700;letter-spacing:-.04em}
+.tabs{display:flex;gap:22px}.tabs a{color:var(--mut)}.tabs a.on{color:var(--tx);text-decoration:underline;text-underline-offset:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 16px 22px}
+.card .m{aspect-ratio:4/5;background:var(--soft);position:relative;overflow:hidden}
+.card .tag{position:absolute;top:10px;left:10px;font-size:11px;font-weight:600;background:#fff;padding:4px 8px}
+.card .row{display:flex;justify-content:space-between;margin-top:16px;font-weight:600;font-size:15px}
+.card .sub{display:flex;justify-content:space-between;color:var(--mut);margin-top:2px}
+.card .sub s{margin-right:8px}
+.card .red{color:#d4380d}
+.big{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.big div{padding:80px 32px}
+.big h3{font-size:64px;line-height:.95;letter-spacing:-.05em;font-weight:800}
+.big p{color:var(--mut);max-width:420px;font-size:16px;margin-top:20px}
+.btn{display:inline-flex;height:50px;align-items:center;padding:0 28px;background:var(--tx);color:#fff;margin-top:30px}
+</style></head><body>
+<header><nav class="up"><a>Souliers</a><a>Sabots</a><a>Nouveautés</a></nav><div class="logo">AZARIS®</div><nav class="up"><a>Aide</a><a>Panier [0]</a></nav></header>
+<section class="hero">
+  <div class="hero-top"><h1>AZARIS</h1><p><b>Souliers & sabots — Collection 2026</b>Des formes essentielles, une construction honnête. Livrés en 24-72h partout au Maroc, payés à la réception.</p></div>
+  <div class="strip">
+    <div class="c"><img data-img="atlass-98" alt=""><div class="lbl"><span>Atlass 98</span><span>319 DH</span></div></div>
+    <div class="c"><img data-img="zebra" alt=""><div class="lbl"><span>Zebra</span><span>299 DH</span></div></div>
+    <div class="c"><img data-img="love" alt=""><div class="lbl"><span>Love</span><span>299 DH</span></div></div>
+  </div>
+</section>
+<div class="bar"><div><b>Livraison 24-72h</b><span>Partout au Maroc</span></div><div><b>Paiement à la livraison</b><span>Aucun paiement en ligne</span></div><div><b>Pointures 36-46</b><span>Guide sur WhatsApp</span></div><div><b>Échange facile</b><span>Si la taille ne va pas</span></div></div>
+<section class="sec"><div class="sh"><h2>Tous les modèles</h2><div class="tabs up"><a class="on">Tout (7)</a><a>Souliers (4)</a><a>Sabots (3)</a></div></div><div class="grid" data-grid data-count="4"></div></section>
+<section class="big"><div><h3>Moins,<br>mais mieux.</h3></div><div><p>Chaque modèle AZARIS est choisi pour sa ligne et sa tenue. Pas de collections à rallonge : quelques paires, bien faites, faites pour être portées longtemps.</p><a class="btn up">Découvrir</a></div></section>
+<script src="../js/products.js"></script>
+<script>window.CARD=(p)=>`<article class="card"><div class="m"><img src="${p.images[0]}" alt=""><span class="tag">−${H.off(p)}%</span></div><div class="row"><span>${p.name}</span><span class="red">${H.money(p.price)}</span></div><div class="sub"><span>${p.category==="shoes"?"Soulier":"Sabot custom"}</span><s>${H.money(p.oldPrice)}</s></div></article>`</script>
+<script src="_preview.js"></script>
+</body></html>
