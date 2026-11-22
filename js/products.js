@@ -17,6 +17,7 @@ window.STORE = {
 
 (function () {
   const IMG = "https://anzarstep.com/api/local-assets/products/";
+  window.ASSETS = "https://anzarstep.com/";
   const SIZES = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
   const p = (files) => files.map((f) => IMG + f);
 
@@ -29,8 +30,8 @@ window.STORE = {
       price: 299,
       oldPrice: 350,
       stock: 11,
-      tag: "Trending",
-      desc: "Mocassin slip-on b finition texturée noir & blanc. Intérieur rembourré, confortable mn sbah l lil.",
+      tag: "Tendance",
+      desc: "Un mocassin slip-on audacieux à la finition texturée noir et blanc. Intérieur rembourré pour un confort du matin au soir.",
       specs: ["Slip-on", "Texture zebra noir/blanc", "Intérieur rembourré", "Fait main au Maroc"],
       sizes: SIZES,
       images: p([
@@ -47,8 +48,8 @@ window.STORE = {
       price: 299,
       oldPrice: 350,
       stock: 22,
-      tag: "Retro",
-      desc: "Mocassin inspiré des années 90, semelle chunky statement, couleur marron chocolat profond.",
+      tag: "Rétro",
+      desc: "Un mocassin inspiré des années 90, monté sur une semelle chunky affirmée, dans un brun chocolat profond.",
       specs: ["Semelle chunky", "Marron chocolat", "Style 90s", "Cuir véritable"],
       sizes: SIZES,
       images: p([
@@ -65,8 +66,8 @@ window.STORE = {
       price: 319,
       oldPrice: 400,
       stock: 35,
-      tag: "Best seller",
-      desc: "Derby en cuir classique sur une semelle plateforme robuste, grip fort o look moderne.",
+      tag: "Best-seller",
+      desc: "Une tige derby en cuir classique sur une semelle plateforme robuste à forte adhérence. Le classique, revisité.",
       specs: ["Derby cuir", "Semelle plateforme", "Haute adhérence", "Fait main au Maroc"],
       sizes: SIZES,
       images: p([
@@ -83,8 +84,8 @@ window.STORE = {
       price: 299,
       oldPrice: 350,
       stock: 21,
-      tag: "Classic",
-      desc: "Penny loafer noir classique, bride sur l'empeigne o semelle crantée chunky.",
+      tag: "Classique",
+      desc: "Le penny loafer noir intemporel : bride sur l'empeigne et semelle crantée chunky pour une allure moderne.",
       specs: ["Penny loafer", "Noir profond", "Semelle crantée", "Cuir véritable"],
       sizes: SIZES,
       images: p([
@@ -101,9 +102,9 @@ window.STORE = {
       price: 299,
       oldPrice: 450,
       stock: 26,
-      tag: "Custom",
-      desc: "Sabot custom peint à la main: flammes o détails ninja. Pièce unique b style anime.",
-      specs: ["Sabot custom", "Peint à la main", "Flammes & détails ninja", "Semelle confort"],
+      tag: "Édition custom",
+      desc: "Sabot personnalisé peint à la main, orné de flammes et de détails ninja. Une pièce à l'esprit anime.",
+      specs: ["Sabot personnalisé", "Peint à la main", "Flammes & détails ninja", "Semelle confort"],
       sizes: SIZES,
       images: p([
         "1790337415412-z54h10jn.jpeg", "1790337431210-5pkoj1no.jpeg", "1790337438020-27kciwxo.jpeg",
@@ -118,9 +119,9 @@ window.STORE = {
       price: 299,
       oldPrice: 450,
       stock: 15,
-      tag: "Custom",
-      desc: "Sabot custom b accents bleus o détails sharp, energy dyal speed.",
-      specs: ["Sabot custom", "Accents bleus", "Peint à la main", "Semelle confort"],
+      tag: "Édition custom",
+      desc: "Sabot personnalisé aux accents bleus et aux détails nets, pour une allure pleine d'énergie.",
+      specs: ["Sabot personnalisé", "Accents bleus", "Peint à la main", "Semelle confort"],
       sizes: SIZES,
       images: p([
         "1790336135961-4fiqu87m.jpeg", "1790336147603-8zej0de5.jpeg", "1790336153646-8cqcgtfl.jpeg",
@@ -136,9 +137,9 @@ window.STORE = {
       price: 299,
       oldPrice: 450,
       stock: 200,
-      tag: "Custom",
-      desc: "Sabot custom rose b art \"Flames\" o écriture \"Love\" ornée.",
-      specs: ["Sabot custom", "Rose", "Art flames + script Love", "Semelle confort"],
+      tag: "Édition custom",
+      desc: "Sabot personnalisé rose, décoré d'un motif flammes et d'une calligraphie \"Love\" ornementale.",
+      specs: ["Sabot personnalisé", "Rose", "Art flames + script Love", "Semelle confort"],
       sizes: SIZES,
       images: p([
         "1790335846069-m8ymizif.jpeg", "1790335853537-yj4q23kk.jpeg", "1790335857912-9jiiyhy3.jpeg",

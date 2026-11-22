@@ -1,18 +1,18 @@
-# ANZAR STEP — Future Footwear Store
+# ANZAR STEP — Boutique en ligne
 
-Site e-commerce statique (HTML/CSS/JS, bla build) b style sci-fi / futuriste, l'catalogue dyal anzarstep.com.
+Site e-commerce statique (HTML/CSS/JS, sans build), design premium et épuré inspiré d'anzarstep.com.
 
 ## Features
-- Hero holographique (anneaux animés, HUD, rotation des produits), fond particules interactif, effet glitch
+- Hero plein écran (vidéo de la marque), bandeau livraison/COD, sections catégories, histoire, étapes de commande
 - 7 produits réels (ZEBRA, Chunky Brownie 90s, Atlass 98, Shadow Step, NARUTO, SONIC, LOVE) avec prix, ancien prix, remise, stock
 - Filtres: Chaussures / Sandales & Sabots
-- Fiche produit: galerie, choix de pointure EU 36-46, quantité
+- Fiche produit: galerie, choix de pointure EU 36-46, quantité, onglets description / livraison / échange
 - Panier (localStorage) + formulaire COD (nom, téléphone, ville, adresse) → commande envoyée sur WhatsApp
 - Responsive mobile, reduced-motion respecté
 
 ## Modifier
 Tout est dans `js/products.js`: nom de la marque, numéro WhatsApp, réseaux sociaux, produits, prix.
-Les images sont chargées depuis anzarstep.com; si une image ne charge pas, un visuel néon de remplacement s'affiche.
+Les images sont chargées depuis anzarstep.com; si une image ne charge pas, un visuel neutre de remplacement s'affiche.
 
 ## Lancer en local
 ```
