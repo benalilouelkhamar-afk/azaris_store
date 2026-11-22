@@ -1,9 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 
-// URL et clé publique (anon) du projet Supabase.
-// Elles se règlent dans le fichier .env (voir .env.example) ou dans les variables d'environnement de l'hébergeur.
-const url = import.meta.env.VITE_SUPABASE_URL;
-const key = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// URL et clé publique (anon) du projet Supabase. La clé anon est faite pour être publique :
+// la sécurité est assurée par les règles RLS de supabase/schema.sql.
+// Les variables VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY (fichier .env ou hébergeur) remplacent ces valeurs.
+const url = import.meta.env.VITE_SUPABASE_URL || "https://snppwwexhclohbxjpyhv.supabase.co";
+const key = import.meta.env.VITE_SUPABASE_ANON_KEY ||
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNucHB3d2V4aGNsb2hieGpweWh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUzMDQxMTEsImV4cCI6MjExMDg4MDExMX0.WvdcW93q4Ye2-428qaikHGEN7LsPkJar1uyJHpAU1gg";
 
 export const supabase = url && key ? createClient(url, key) : null;
 export const hasBackend = !!supabase;

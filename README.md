@@ -25,11 +25,9 @@ Avec Supabase, toutes les commandes des clients arrivent dans l'admin, en direct
    insert into public.admins (user_id) select id from auth.users where email = 'votre@email.com';
    ```
 4. Authentication > Sign In / Providers : désactiver *Allow new users to sign up*.
-5. Copier `.env.example` en `.env` et coller la clé publique (Project Settings > API > `anon` `public`). Sur Vercel/Netlify, ajouter les mêmes variables `VITE_SUPABASE_URL` et `VITE_SUPABASE_ANON_KEY`.
+5. L'URL et la clé publique (`anon`) du projet sont déjà dans `src/supabase.js`. Pour un autre projet, les remplacer via `.env` (voir `.env.example`) ou les variables `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` de l'hébergeur.
 
 Sécurité : la clé `anon` est publique (c'est normal). Les clients ne peuvent que lire les produits et passer commande ; les prix et le total sont recalculés par la base (fonction `place_order`), le stock est décrémenté automatiquement. Seuls les comptes de la table `admins` voient les commandes. Ne jamais mettre la clé `service_role` dans le site.
-
-Sans ces variables, le site fonctionne en mode local (données dans le navigateur, mot de passe admin `azaris2026`).
 
 ## Administration
 Adresse : `/#/admin` (avec Supabase : e-mail + mot de passe du compte admin).
