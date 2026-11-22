@@ -1,8 +1,6 @@
-/* =========================================================
-   STORE CONFIG + CATALOG
-   Edit this file only to change brand, WhatsApp or products.
-   ========================================================= */
-window.STORE = {
+/* Default store settings and catalogue.
+   The admin dashboard can override them (saved in the browser). */
+export const DEFAULT_SETTINGS = {
   name: "AZARIS",
   tagline: "Des souliers qui ont du caractère.",
   whatsapp: "212679466809",          // international format, no "+" or spaces
@@ -12,15 +10,16 @@ window.STORE = {
   facebook: "",
   currency: "DH",
   delivery: "24 - 72h",
-  shippingFee: 0                     // 0 = livraison gratuite
+  shippingFee: 0,                    // 0 = livraison gratuite
+  topbar: "Livraison offerte au Maroc. Paiement à la livraison.",
+  adminPassword: "azaris2026"
 };
 
-(function () {
-  const IMG = "https://anzarstep.com/api/local-assets/products/";
-  const SIZES = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
-  const p = (files) => files.map((f) => IMG + f);
+const IMG = "https://anzarstep.com/api/local-assets/products/";
+const SIZES = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
+const p = (files) => files.map((f) => IMG + f);
 
-  window.PRODUCTS = [
+export const DEFAULT_PRODUCTS = [
     {
       id: "zebra",
       name: "ZEBRA",
@@ -147,10 +146,3 @@ window.STORE = {
       ])
     }
   ];
-
-  window.CATEGORIES = [
-    { id: "all", label: "Tout" },
-    { id: "shoes", label: "Chaussures" },
-    { id: "sandals", label: "Sandales & Sabots" }
-  ];
-})();

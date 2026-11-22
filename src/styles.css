@@ -60,6 +60,7 @@ h1{font-size:clamp(54px,6.6vw,96px);line-height:.98;margin-bottom:28px}
 .hero-visual{position:relative;height:660px}
 .arch{position:absolute;inset:0 90px 0 0;border-radius:240px 240px 18px 18px;overflow:hidden;background:var(--card)}
 .inset{position:absolute;right:0;bottom:48px;width:230px;height:290px;border-radius:14px;overflow:hidden;border:6px solid var(--bg);background:var(--card)}
+.arch,.inset{padding:0;cursor:pointer;display:block}
 .arch img,.inset img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .arch:hover img,.inset:hover img{transform:scale(1.04)}
 
@@ -78,6 +79,7 @@ h1{font-size:clamp(54px,6.6vw,96px);line-height:.98;margin-bottom:28px}
 .card-m img.alt{opacity:0}
 .card:hover .card-m img.main{opacity:0}
 .card:hover .card-m img.alt{opacity:1;transform:scale(1.03)}
+.card-off.sold{right:auto;left:12px;background:#0e0e0e;color:var(--tx);border:1px solid var(--line)}
 .card-off{position:absolute;top:12px;right:12px;background:var(--tx);color:#121212;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
 .card-b{padding:16px 6px 6px}
 .card-t{font-size:13px;color:var(--mut)}
@@ -177,17 +179,17 @@ h1{font-size:clamp(54px,6.6vw,96px);line-height:.98;margin-bottom:28px}
 .totals{display:flex;flex-direction:column;gap:6px;color:var(--mut)}
 .totals div{display:flex;justify-content:space-between}
 .totals .grand{color:var(--tx);font-size:18px;font-weight:600;padding-top:8px}
-#checkout{display:flex;flex-direction:column;gap:14px}
+form.checkout{display:flex;flex-direction:column;gap:14px}
 .back{align-self:flex-start;font-size:14px}
 .co-sum{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--mut);padding-bottom:12px;border-bottom:1px solid var(--line)}
 .co-sum div{display:flex;justify-content:space-between;gap:10px}
 .co-sum b{color:var(--tx);font-weight:500}
 .co-total{display:flex;justify-content:space-between;font-weight:600;font-size:17px;margin-bottom:6px}
 .co-total span:last-child{color:var(--gold)}
-#checkout label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
-#checkout input,#checkout textarea{font:400 16px var(--sans);color:var(--tx);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;outline:none;resize:vertical;transition:border-color .2s}
-#checkout input:focus,#checkout textarea:focus{border-color:var(--gold)}
-#checkout .bad{border-color:var(--err)}
+form.checkout label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+form.checkout input,form.checkout textarea{font:400 16px var(--sans);color:var(--tx);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;outline:none;resize:vertical;transition:border-color .2s}
+form.checkout input:focus,form.checkout textarea:focus{border-color:var(--gold)}
+form.checkout .bad{border-color:var(--err)}
 .d-note{font-size:13px;color:var(--mut);text-align:center}
 
 .wa-float{position:fixed;right:22px;bottom:22px;z-index:50;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.4)}
