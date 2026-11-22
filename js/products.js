@@ -3,13 +3,13 @@
    Edit this file only to change brand, WhatsApp or products.
    ========================================================= */
 window.STORE = {
-  name: "ANZAR STEP",
-  tagline: "Classic shoes, beautifully aged.",
+  name: "AZARIS",
+  tagline: "Des souliers qui ont du caractère.",
   whatsapp: "212679466809",          // international format, no "+" or spaces
-  email: "anzarsupport@gmail.com",
-  instagram: "https://www.instagram.com/anzar_step",
-  tiktok: "https://www.tiktok.com/@anzarstep",
-  facebook: "https://www.facebook.com/profile.php?id=61584317997419",
+  email: "",                         // laisser vide pour masquer
+  instagram: "",                     // lien Instagram (vide = masqué)
+  tiktok: "",
+  facebook: "",
   currency: "DH",
   delivery: "24 - 72h",
   shippingFee: 0                     // 0 = livraison gratuite
@@ -17,7 +17,6 @@ window.STORE = {
 
 (function () {
   const IMG = "https://anzarstep.com/api/local-assets/products/";
-  window.ASSETS = "https://anzarstep.com/";
   const SIZES = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
   const p = (files) => files.map((f) => IMG + f);
 

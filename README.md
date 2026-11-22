@@ -1,24 +1,23 @@
-# ANZAR STEP — Boutique en ligne
+# AZARIS — Boutique en ligne
 
-Site e-commerce statique (HTML/CSS/JS, sans build), design premium et épuré inspiré d'anzarstep.com.
+Site e-commerce statique (HTML/CSS/JS, sans build). Design original : bento grid, vert forêt + citron vert, typographie grotesque.
 
-## Features
-- Hero plein écran (vidéo de la marque), bandeau livraison/COD, sections catégories, histoire, étapes de commande
-- 7 produits réels (ZEBRA, Chunky Brownie 90s, Atlass 98, Shadow Step, NARUTO, SONIC, LOVE) avec prix, ancien prix, remise, stock
-- Filtres: Chaussures / Sandales & Sabots
-- Fiche produit: galerie, choix de pointure EU 36-46, quantité, onglets description / livraison / échange
-- Panier (localStorage) + formulaire COD (nom, téléphone, ville, adresse) → commande envoyée sur WhatsApp
-- Responsive mobile, reduced-motion respecté
+## Contenu
+- Hero en bento (titre, offre -34%, produits phares)
+- Catalogue de 7 modèles avec filtres (Souliers / Sabots custom), badges promo et stock
+- Mise en avant d'un modèle avec achat rapide (choix de pointure direct)
+- Engagements, étapes de commande, FAQ
+- Fiche produit en panneau latéral (bottom sheet sur mobile) : galerie, pointures EU 36-46, quantité
+- Panier (localStorage) + formulaire paiement à la livraison (nom, téléphone, ville, adresse) envoyé sur WhatsApp
 
 ## Modifier
-Tout est dans `js/products.js`: nom de la marque, numéro WhatsApp, réseaux sociaux, produits, prix.
-Les images sont chargées depuis anzarstep.com; si une image ne charge pas, un visuel neutre de remplacement s'affiche.
+Tout est dans `js/products.js` : nom de la marque, numéro WhatsApp, e-mail, réseaux sociaux (vide = masqué), produits et prix.
+Les images produits sont chargées depuis leur URL d'origine ; si une image ne charge pas, un visuel neutre s'affiche.
 
 ## Lancer en local
 ```
 python3 -m http.server 8000
 ```
-puis ouvrir http://localhost:8000
 
 ## Déployer
-Projet statique: Vercel, Netlify ou GitHub Pages (dossier racine, sans build).
+Statique : Vercel, Netlify ou GitHub Pages, sans build.
